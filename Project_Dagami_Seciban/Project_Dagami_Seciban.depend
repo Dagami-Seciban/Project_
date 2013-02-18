@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1360822373 source:d:\c++\project_dagami_seciban\src\project.cpp
+	"../include/Project.h"
+	<iostream>
+	<stdlib.h>
+	<fstream>
+	<sstream>
+	<string>
+
+1360820575 d:\c++\project_dagami_seciban\include\project.h
+
+1360820554 source:d:\c++\project_dagami_seciban\main.cpp
+	<iostream>
+	<cstdlib>
+	<string>
+	"include/Project.h"
+

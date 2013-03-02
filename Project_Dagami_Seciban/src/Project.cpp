@@ -1,12 +1,14 @@
 #include "../include/Project.h"
+#include <algorithm>
 #include <iostream>
 #include <stdlib.h>
 #include <fstream>
 #include <sstream>
-#include <string>
 #include <cstdlib>
+#include <string>
 #include <vector>
 #include <cmath>
+#include <list>
 #include <map>
 
 using namespace std;
@@ -910,4 +912,44 @@ void Project::factorial_digit_sum()
     }
 
     cout << endl << "The sum of the digits is " << sum << endl << endl;
+}
+
+void Project::name_scores()
+{
+    ifstream file;
+    long result = 0;
+    int i = 0;
+
+    list < string > names;
+    file.open ( "names.txt" );
+    file.seekg ( 1, ios :: beg );
+    while ( !file.eof () )
+    {
+        char name [ 20 ];
+        file.get ( name, 20, '"' );
+        file.seekg ( 3, ios :: cur );
+        string srtname = name;
+        names.push_back ( name );
+    }
+
+    names.sort ();
+    list < string > :: iterator a;
+
+    for ( a = names.begin (); a != names.end (); a++ )
+    {
+        string name = *a;
+        int score = 0;
+        int j = 0;
+
+        while ( name [ j ] != '\0' )
+        {
+            score += ( int ) name [ j ] - 64;
+            j++;
+        }
+
+        result += score * i;
+        i++;
+    }
+
+    cout << endl << "The sum of the name scores is " << result << endl << endl;
 }

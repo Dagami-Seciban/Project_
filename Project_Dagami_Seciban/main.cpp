@@ -18,7 +18,7 @@ const string PROBLEMS [] = {
     " Summation of Primes",
     " Largest Product in a Grid",
     " Highly Divisible Triangular Number",
-    " Largest sum",
+    " Largest Sum",
     " Longest Collatz Sequence",
     " Diophantine Reciprocals A",
     " Power Digit Sum",
@@ -26,11 +26,12 @@ const string PROBLEMS [] = {
     " Maximum Path Sum I",
     " Counting Sundays",
     " Factorial Digit Sum",
+    " Name Scores",
     " Exit"
 };
 
 const int NUM_PROBLEMS = 1;
-const int EXIT = NUM_PROBLEMS + 20;
+const int EXIT = NUM_PROBLEMS + 21;
 
 int main ()
 {
@@ -42,7 +43,7 @@ int main ()
     while ( done == false )
     {
         system ( "cls" );
-        for ( i = 0; i < ( NUM_PROBLEMS + 20 ); i++ )
+        for ( i = 0; i < ( NUM_PROBLEMS + 21 ); i++ )
         {
             cout << ( i + 1 ) << ". " << PROBLEMS [i] << endl;
         }
@@ -129,6 +130,10 @@ int main ()
 
             case 20:
                 project.factorial_digit_sum();
+                break;
+
+            case 21:
+                project.name_scores();
                 break;
 
             case EXIT:
